@@ -100,9 +100,11 @@ nav a:hover{
 }
 
 .buttons{
-
     margin-top:35px;
-
+    display:flex;
+    flex-wrap:wrap;
+    gap:15px;
+    align-items:center;
 }
 
 .btn-primary{
@@ -126,19 +128,21 @@ nav a:hover{
 
 }
 .btn-bragbook{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
     background:#14b8a6;
     color:#fff;
     text-decoration:none;
-    padding:14px 30px;
+    padding:14px 24px;
     border-radius:8px;
+    white-space:nowrap;
     transition:.3s;
 }
-
 .btn-bragbook:hover{
     background:#0f766e;
     transform:translateY(-2px);
 }
-
 .social{
 
     margin-top:40px;
@@ -1439,4 +1443,24 @@ nav{display:none;}
 .hero h1{font-size:34px;}
 .hero h2{font-size:20px;}
 .hero-image img{max-width:200px;}
+}
+
+/* ===== Hero Button Layout Fix ===== */
+.buttons a{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    white-space:nowrap;
+}
+
+@media (max-width:992px){
+    .buttons{
+        flex-direction:column;
+        width:100%;
+        align-items:center;
+    }
+    .buttons a{
+        width:100%;
+        max-width:340px;
+    }
 }
