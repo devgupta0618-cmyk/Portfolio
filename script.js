@@ -166,3 +166,56 @@ if(themeToggle){
     });
 
 }
+
+// ==========================================
+// Contact Form - EmailJS
+// ==========================================
+
+const contactForm = document.getElementById("contact-form");
+
+if (contactForm) {
+
+    contactForm.addEventListener("submit", function (e) {
+
+        e.preventDefault();
+
+        const submitButton = contactForm.querySelector("button");
+
+        submitButton.disabled = true;
+        submitButton.innerHTML = "Sending...";
+
+        emailjs.sendForm(
+
+            "service_ip4rd8j",
+
+            "template_jjp7yeq",
+
+            this
+
+        )
+
+        .then(() => {
+
+            alert("✅ Message sent successfully!");
+
+            contactForm.reset();
+
+            submitButton.disabled = false;
+            submitButton.innerHTML = "Send Message";
+
+        })
+
+        .catch((error) => {
+
+            console.error(error);
+
+            alert("❌ Failed to send message. Please try again.");
+
+            submitButton.disabled = false;
+            submitButton.innerHTML = "Send Message";
+
+        });
+
+    });
+
+}
