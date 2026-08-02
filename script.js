@@ -1,1 +1,5 @@
-console.log("Portfolio Loaded Successfully");
+window.addEventListener("load",function(){
+
+    document.getElementById("loader").style.display="none";
+
+});
