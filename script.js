@@ -123,24 +123,29 @@ if(topBtn){
 
 }
 
-
 // ===============================
 // Dark / Light Mode
 // ===============================
 
 const themeToggle = document.getElementById("theme-toggle");
 
-if(themeToggle){
+// Restore saved theme
 
-    // Restore saved theme
+if(localStorage.getItem("theme")==="light"){
 
-    if(localStorage.getItem("theme")==="light"){
+    document.body.classList.add("light-mode");
 
-        document.body.classList.add("light-mode");
+    if(themeToggle){
 
         themeToggle.checked=true;
 
     }
+
+}
+
+// Toggle theme
+
+if(themeToggle){
 
     themeToggle.addEventListener("change",function(){
 
