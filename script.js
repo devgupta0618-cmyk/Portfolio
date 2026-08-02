@@ -1,6 +1,5 @@
 // ==========================================
 // Portfolio JavaScript
-// Devkumar Gupta Portfolio
 // ==========================================
 
 // ===============================
@@ -12,11 +11,15 @@ window.addEventListener("load", () => {
     const loader = document.getElementById("loader");
 
     if (loader) {
+
         loader.style.opacity = "0";
 
         setTimeout(() => {
+
             loader.style.display = "none";
+
         }, 500);
+
     }
 
 });
@@ -32,17 +35,17 @@ const typingText = "ETQ Reliance Developer";
 
 let typingIndex = 0;
 
-function typeText() {
+function typeText(){
 
-    if (!typingElement) return;
+    if(!typingElement) return;
 
-    if (typingIndex < typingText.length) {
+    if(typingIndex < typingText.length){
 
         typingElement.innerHTML += typingText.charAt(typingIndex);
 
         typingIndex++;
 
-        setTimeout(typeText, 80);
+        setTimeout(typeText,80);
 
     }
 
@@ -52,28 +55,32 @@ typeText();
 
 
 // ===============================
-// Fade In Animation
+// Scroll Animation
 // ===============================
 
-const observer = new IntersectionObserver((entries) => {
+const hiddenElements = document.querySelectorAll(".hidden");
 
-    entries.forEach((entry) => {
+const observer = new IntersectionObserver((entries)=>{
 
-        if (entry.isIntersecting) {
+    entries.forEach((entry)=>{
+
+        if(entry.isIntersecting){
 
             entry.target.classList.add("show");
+
+            entry.target.classList.remove("hidden");
 
         }
 
     });
 
-}, {
-    threshold: 0.2
+},{
+    threshold:0.15
 });
 
-document.querySelectorAll(".hidden").forEach((element) => {
+hiddenElements.forEach((el)=>{
 
-    observer.observe(element);
+    observer.observe(el);
 
 });
 
@@ -84,35 +91,35 @@ document.querySelectorAll(".hidden").forEach((element) => {
 
 const topBtn = document.getElementById("topBtn");
 
-window.addEventListener("scroll", () => {
+window.addEventListener("scroll",()=>{
 
-    if (!topBtn) return;
+    if(!topBtn) return;
 
-    if (window.scrollY > 400) {
+    if(window.scrollY > 300){
 
-        topBtn.style.display = "flex";
+        topBtn.style.display="flex";
 
-    } else {
+    }else{
 
-        topBtn.style.display = "none";
+        topBtn.style.display="none";
 
     }
 
 });
 
-if (topBtn) {
+if(topBtn){
 
-    topBtn.addEventListener("click", () => {
+    topBtn.onclick=function(){
 
         window.scrollTo({
 
-            top: 0,
+            top:0,
 
-            behavior: "smooth"
+            behavior:"smooth"
 
         });
 
-    });
+    }
 
 }
 
@@ -123,19 +130,31 @@ if (topBtn) {
 
 const themeToggle = document.getElementById("theme-toggle");
 
-if (themeToggle) {
+if(themeToggle){
 
-    themeToggle.addEventListener("click", () => {
+    // Restore saved theme
 
-        document.body.classList.toggle("light-mode");
+    if(localStorage.getItem("theme")==="light"){
 
-        if (document.body.classList.contains("light-mode")) {
+        document.body.classList.add("light-mode");
 
-            themeToggle.innerHTML = "☀️";
+        themeToggle.checked=true;
 
-        } else {
+    }
 
-            themeToggle.innerHTML = "🌙";
+    themeToggle.addEventListener("change",function(){
+
+        if(this.checked){
+
+            document.body.classList.add("light-mode");
+
+            localStorage.setItem("theme","light");
+
+        }else{
+
+            document.body.classList.remove("light-mode");
+
+            localStorage.setItem("theme","dark");
 
         }
 
