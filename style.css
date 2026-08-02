@@ -125,6 +125,19 @@ nav a:hover{
     border-radius:8px;
 
 }
+.btn-bragbook{
+    background:#14b8a6;
+    color:#fff;
+    text-decoration:none;
+    padding:14px 30px;
+    border-radius:8px;
+    transition:.3s;
+}
+
+.btn-bragbook:hover{
+    background:#0f766e;
+    transform:translateY(-2px);
+}
 
 .social{
 
@@ -1426,17 +1439,4 @@ nav{display:none;}
 .hero h1{font-size:34px;}
 .hero h2{font-size:20px;}
 .hero-image img{max-width:200px;}
-}
-.btn-bragbook{
-    background:#14b8a6;
-    color:#fff;
-    text-decoration:none;
-    padding:14px 30px;
-    border-radius:8px;
-    transition:.3s;
-}
-
-.btn-bragbook:hover{
-    background:#0f766e;
-    transform:translateY(-2px);
 }
