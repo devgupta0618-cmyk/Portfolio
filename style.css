@@ -1302,3 +1302,18 @@ body.light-mode footer{
     border-top:1px solid #e5e7eb;
 
 }
+.contact-form button{
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.contact-form button:disabled{
+
+    opacity:.7;
+
+    cursor:not-allowed;
+
+}
