@@ -584,6 +584,13 @@ nav{
 
     border-left:5px solid #2563eb;
 
+    width:100%;
+    max-width:100%;
+    box-sizing:border-box;
+    overflow:hidden;
+    overflow-wrap:break-word;
+    word-break:break-word;
+
 }
 
 .project-card:hover{
@@ -1462,5 +1469,51 @@ nav{display:none;}
     .buttons a{
         width:100%;
         max-width:340px;
+    }
+}
+
+/* ===== Projects Mobile Visibility Fix ===== */
+@media (max-width:768px){
+
+    .projects{
+        display:block;
+        width:100%;
+        overflow:hidden;
+        padding:70px 20px;
+    }
+
+    .project-card{
+        display:block;
+        width:100%;
+        max-width:100%;
+        padding:22px;
+        margin:0 0 25px;
+        overflow:hidden;
+        box-sizing:border-box;
+    }
+
+    .project-card h3{
+        font-size:22px;
+        line-height:1.4;
+    }
+
+    .project-card p,
+    .project-card li{
+        font-size:15px;
+        line-height:1.7;
+        word-break:break-word;
+    }
+
+    .project-card ul{
+        margin-left:18px;
+    }
+
+    .tech-stack{
+        justify-content:center;
+    }
+
+    .tech-stack span{
+        font-size:13px;
+        padding:8px 14px;
     }
 }
