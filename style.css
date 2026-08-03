@@ -1517,3 +1517,34 @@ nav{display:none;}
         padding:8px 14px;
     }
 }
+
+
+/* ==========================================
+   WHY ME - LIGHT MODE
+========================================== */
+
+body.light-mode .whyme{
+    background:#ffffff;
+}
+
+body.light-mode .whyme-intro{
+    color:#4b5563;
+}
+
+body.light-mode .why-card{
+    background:#ffffff;
+    border-left:5px solid #2563eb;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+body.light-mode .why-card h3{
+    color:#111827;
+}
+
+body.light-mode .why-card p{
+    color:#4b5563;
+}
+
+body.light-mode .why-icon{
+    color:#2563eb;
+}
